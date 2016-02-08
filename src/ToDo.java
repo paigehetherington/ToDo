@@ -10,7 +10,7 @@ public class ToDo { //main method
         Scanner scanner = new Scanner(System.in);
 
         while (true) {  //continuously loops over list of options
-            System.out.println("1. Create to-do item)");
+            System.out.println("1. Create to-do item");
             System.out.println(("2. Toggle to-do item"));
             System.out.println(("3. List to-do items")); //3 options
 
@@ -28,15 +28,16 @@ public class ToDo { //main method
                 int itemNum = Integer.valueOf(scanner.nextLine()); //convert string to int
                 ToDoItem item = items.get(itemNum - 1);    //because not starting at zero. Captured into ToDo variable
                 item.isDone = !item.isDone; //to toggle so if true becomes false and vv
-            }
             } else if (option.equals("3")) {
                 int i = 1; //cause humans start counting at 1, to number list of options
                 for (ToDoItem item : items) {   //todo item in items loops over todo items
                     String checkBox = "[]";
-                    if (item.isDone);  {            //don't have to say == true
+                    if (item.isDone) ;
+                    {            //don't have to say == true
                         String checkbox = "[x] ";
                         System.out.println(checkbox + i + ". " + item.text);
-                    i++; //increments it (+1)
+                        i++; //increments it (+1)
+                    }
                 }
             } else {
                 System.out.println("Invalid option");
