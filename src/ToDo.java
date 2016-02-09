@@ -34,8 +34,8 @@ public class ToDo { //main method
                     String checkBox = "[]";
                     if (item.isDone) ;
                     {            //don't have to say == true
-                        String checkbox = "[x] ";
-                        System.out.println(checkbox + i + ". " + item.text);
+                        String checkbox = "[x]";
+                        System.out.printf("%s %d. %s\n", checkbox, i, item.text);//(checkbox + i + ". " + item.text);
                         i++; //increments it (+1)
                     }
                 }
