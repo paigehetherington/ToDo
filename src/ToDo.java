@@ -1,3 +1,5 @@
+import org.h2.tools.Server;
+
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.Scanner;
@@ -38,6 +40,7 @@ public class ToDo { //main method
         Scanner scanner = new Scanner(System.in);
 
         //database stuff
+        Server.createWebServer().start();
         Connection conn = DriverManager.getConnection("jdbc:h2:./main");
         Statement stmt = conn.createStatement();
         stmt.execute("CREATE TABLE IF NOT EXISTS todos (id IDENTITY, text VARCHAR, is_done BOOLEAN)");
