@@ -10,7 +10,7 @@ import java.util.Stack;
  */
 public class ToDo { //main method
     public static void insertToDo(Connection conn, String text) throws SQLException {
-        PreparedStatement stmt = conn.prepareStatement("INSET INTO todos VALUES (NULL, ?, false)");
+        PreparedStatement stmt = conn.prepareStatement("INSERT INTO todos VALUES (NULL, ?, false)");
         stmt.setString(1, text);
         stmt.execute();
     }
@@ -40,7 +40,7 @@ public class ToDo { //main method
         Scanner scanner = new Scanner(System.in);
 
         //database stuff
-        Server.createWebServer().start();
+        //Server.createWebServer().start();
         Connection conn = DriverManager.getConnection("jdbc:h2:./main");
         Statement stmt = conn.createStatement();
         stmt.execute("CREATE TABLE IF NOT EXISTS todos (id IDENTITY, text VARCHAR, is_done BOOLEAN)");
@@ -86,5 +86,6 @@ public class ToDo { //main method
             }
 
         }
+
     }
 }
